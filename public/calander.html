@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendar UI</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #97CADB;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .calendar-container {
+      width: 900px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      display: flex;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      background: #D6EBEE ;
+      width: 30%;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .sidebar img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .sidebar h3 {
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      margin-top:20px;
+    }
+
+    .sidebar ul li {
+      margin: 0px 10px;
+      font-size: 16px;
+      color: green;
+      padding: 10px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .calendar {
+      width: 70%;
+      padding: 20px;
+    }
+
+    .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .calendar-header h2 {
+      font-size: 24px;
+      color: #555;
+    }
+
+    .calendar-header select {
+      padding: 5px 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .calendar-days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .calendar-days div {
+      text-align: center;
+      padding: 10px;
+      border-radius: 10px;
+      color: #555;
+      transition: 0.3s;
+    }
+
+    .calendar-days .today {
+      background: #a5d8ff;
+      color: #fff;
+    }
+
+    .calendar-days .sunday {
+      background: #ffadad;
+      color: #fff;
+    }
+
+    .calendar-days .holiday {
+      background: #ccffcc;
+      color: #333;
+    }
+
+    .calendar-footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .day-names {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+      text-align: center;
+      font-weight: bold;
+      color: #555;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .calendar-container {
+        flex-direction: column;
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      .sidebar {
+        width: 100%;
+        padding: 10px;
+      }
+
+      .sidebar img {
+        width: 60px;
+        height: 60px;
+      }
+
+      .sidebar h3 {
+        font-size: 18px;
+      }
+
+      .sidebar ul li {
+        font-size: 14px;
+        padding: 6px;
+      }
+
+      .calendar {
+        width: 100%;
+        padding: 10px;
+      }
+
+      .calendar-header h2 {
+        font-size: 20px;
+      }
+
+      .calendar-header select {
+        font-size: 12px;
+        padding: 5px;
+      }
+
+      .day-names div, 
+      .calendar-days div {
+        font-size: 12px;
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="calendar-container">
+    <div class="sidebar">
+      <img src="https://assets.onecompiler.app/42y68y97m/4368p53jg/WhatsApp%20Image%202024-12-14%20at%208.40.55%20PM.jpeg" alt="User">
+      <h3>Tech Solutions</h3>
+     <h3>Calendar</h3>
+      <ul>
+        <li style="color: black;">Holidays</li>
+        <li>14 February</li>
+      </ul>
+    </div>
+    <div class="calendar">
+      <div class="calendar-header">
+        <h2 id="currentDate">January 2025</h2>
+        <div>
+          <select id="monthSelector"></select>
+          <select id="yearSelector"></select>
+        </div>
+      </div>
+      <div class="day-names">
+        <div>Sun</div>
+        <div>Mon</div>
+        <div>Tue</div>
+        <div>Wed</div>
+        <div>Thu</div>
+        <div>Fri</div>
+        <div>Sat</div>
+      </div>
+      <div class="calendar-days">
+        <!-- Days will be dynamically populated -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const calendarDays = document.querySelector('.calendar-days');
+    const yearSelector = document.getElementById('yearSelector');
+    const monthSelector = document.getElementById('monthSelector');
+    const currentDate = document.getElementById('currentDate');
+
+    const today = new Date();
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const holidays = [
+      { date: '2025-02-14', name: 'Valentine\'s Day' },
+      { date: '2025-03-25', name: 'Christmas' },
+      { date: '2025-03-01', name: 'New Year' }
+    ];
+
+    function populateYearSelector() {
+      const currentYear = today.getFullYear();
+      for (let year = 2001; year <= 2030; year++) {
+        const option = document.createElement('option');
+        option.value = year;
+        option.textContent = year;
+        if (year === currentYear) option.selected = true;
+        yearSelector.appendChild(option);
+      }
+    }
+
+    function populateMonthSelector() {
+      months.forEach((month, index) => {
+        const option = document.createElement('option');
+        option.value = index;
+        option.textContent = month;
+        if (index === today.getMonth()) option.selected = true;
+        monthSelector.appendChild(option);
+      });
+    }
+
+    function isHoliday(year, month, day) {
+      const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+      return holidays.find(holiday => holiday.date === dateStr);
+    }
+
+    function populateCalendar(year, month) {
+      calendarDays.innerHTML = '';
+      const firstDay = new Date(year, month, 1).getDay();
+      const lastDate = new Date(year, month + 1, 0).getDate();
+      const prevMonthLastDate = new Date(year, month, 0).getDate();
+
+      // Add previous month's dates
+      for (let i = firstDay - 1; i >= 0; i--) {
+        const div = document.createElement('div');
+        div.textContent = prevMonthLastDate - i;
+        div.classList.add('inactive');
+        calendarDays.appendChild(div);
+      }
+
+      // Add current month's dates
+      for (let i = 1; i <= lastDate; i++) {
+        const div = document.createElement('div');
+        div.textContent = i;
+        const dayOfWeek = new Date(year, month, i).getDay();
+
+        if (dayOfWeek === 0) div.classList.add('sunday'); // Highlight Sundays
+
+        const holiday = isHoliday(year, month, i);
+        if (holiday) div.classList.add('holiday');
+
+        if (i === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
+          div.classList.add('today');
+        }
+
+        calendarDays.appendChild(div);
+      }
+
+      // Add next month's dates
+      const nextMonthStartDay = (firstDay + lastDate) % 7;
+      if (nextMonthStartDay !== 0) {
+        for (let i = 1; i <= 7 - nextMonthStartDay; i++) {
+          const div = document.createElement('div');
+          div.textContent = i;
+          div.classList.add('inactive');
+          calendarDays.appendChild(div);
+        }
+      }
+
+      currentDate.textContent = `${months[month]} ${year}`;
+    }
+
+    yearSelector.addEventListener('change', () => {
+      const selectedYear = parseInt(yearSelector.value);
+      const selectedMonth = parseInt(monthSelector.value);
+      populateCalendar(selectedYear, selectedMonth);
+    });
+
+    monthSelector.addEventListener('change', () => {
+      const selectedYear = parseInt(yearSelector.value);
+      const selectedMonth = parseInt(monthSelector.value);
+      populateCalendar(selectedYear, selectedMonth);
+    });
+
+    populateYearSelector();
+    populateMonthSelector();
+    populateCalendar(today.getFullYear(), today.getMonth());
+  </script>
+</body>
+</html>

@@ -3,179 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Login</title>
+    <title>Tech Solutions | Empowering Innovation</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
         }
- 
-
+        body {
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            background:  #fff;
+            color: #000;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .header {
+            background: #97CADB;
+            width: 100%;
+            padding: 30px;
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border-bottom: 4px solid #97CADB;
+            text-align: center;
+            animation: slideIn 1s ease-out;
+        }
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
         .container {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: calc(100vh - 140px);
+            flex: 1;
+            width: 90%;
+            max-width: 600px;
             padding: 20px;
-            box-sizing: border-box;
         }
-
-        .login-form {
+        .buttons {
             display: flex;
             flex-direction: column;
-            background-color: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
+            gap: 15px;
             width: 100%;
-            max-width: 600px;
+            align-items: center;
         }
-
-        .form {
-            padding: 40px;
-            box-sizing: border-box;
-        }
-
-        .form h2 {
-            margin-bottom: 20px;
-            font-size: 24px;
-            color: #333;
-        }
-
-        .form label {
-            display: block;
-            font-size: 14px;
-            margin-bottom: 8px;
-            color: #555;
-        }
-
-        .form .input-group {
-            position: relative;
-            margin-bottom: 15px;
-        }
-
-        .form .input-group input {
-            width: 90%;
-            padding: 10px 40px 10px 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-
-        .form .input-group .icon {
-            position: absolute;
-            top: 50%;
-            right: 10px;
-            transform: translateY(-50%);
-            color: #888;
+        .buttons button {
+            width: 100%;
+            max-width: 280px;
+            padding: 14px 0;
             font-size: 18px;
+            font-weight: bold;
             cursor: pointer;
-        }
-
-        .form a {
-            display: inline-block;
-            margin-bottom: 20px;
-            font-size: 12px;
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        .form button {
-            width: 100%;
-            padding: 10px;
-            background-color: #018ABE;
             border: none;
+            border-radius: 50px;
+            background: #97CADB;
             color: white;
-            border-radius: 4px;
-            font-size: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+        .buttons button:hover {
+            transform: scale(1.05);
+            background: #82c3d9;
+        }
+        .help-support {
+            font-size: 18px;
+            margin-top: 20px;
+            color: #000000;
             cursor: pointer;
+            text-decoration: underline;
+            transition: color 0.3s ease;
         }
-
-        .form button:hover {
-            background-color:    #b3e4f6;
+        .help-support:hover {
+            color: #000;
         }
-
-        .form .signup {
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
             text-align: center;
-            margin-top: 10px;
-            font-size: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
         }
-
-        .form .signup a {
-            color: #007bff;
-            text-decoration: none;
+        .close {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+            display: block;
+            margin-top: 15px;
         }
-
-    
-
-    </style>
-    <script>
-        // Function to toggle mobile navigation
-        function toggleMenu() {
-            const mobileNav = document.querySelector('.mobile-nav');
-            mobileNav.classList.toggle('active');
+        .close:hover {
+            color: red;
         }
-
-        function togglePasswordVisibility() {
-            const passwordInput = document.getElementById('password');
-            const eyeIcon = document.getElementById('eye-icon');
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                eyeIcon.textContent = '🙈';
-            } else {
-                passwordInput.type = 'password';
-                eyeIcon.textContent = '👁️';
+        @media (min-width: 768px) {
+            .buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+            .buttons button {
+                width: auto;
+                padding: 15px 40px;
+                font-size: 20px;
             }
         }
-    </script>
+    </style>
 </head>
 <body>
-    
-
+    <div class="header">Tech Solutions</div>
     <div class="container">
-        <div class="login-form">
-            <div class="form">
-                <h2>Login</h2>
+        <div class="buttons">
+            <button onclick="navigateTo('adminlogin.html')">Admin Login</button>
+            <button onclick="navigateTo('userlogin.html')">User Login</button>
+        </div>
+        <p class="help-support" onclick="openHelpModal()">Need Assistance? Contact Support</p>
+    </div>
 
-                <label for="name"> <span class="icon">👤</span>Employee Name:</label>
-                <div class="input-group">
-                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
-                </div>
-
-                <label for="email"> <span class="icon">📧</span>Employee Email:</label>
-                <div class="input-group">
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                </div>
-
-                <label for="id"> <span class="icon">🆔</span>Employee ID:</label>
-                <div class="input-group">
-                    <input type="text" id="id" name="id" placeholder="Enter your ID" required>
-                </div>
-
-                <label for="password">Password:</label>
-                <div class="input-group">
-                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                    <span class="icon" id="eye-icon" onclick="togglePasswordVisibility()">👁️</span>
-                </div>
-
-                 
-                <div class="login-container">
-                    <a href="login.html">
-                        <button type="submit">Login</button>
-                    </a>
-                </div>
-                
-                <div class="forgot-password-container">
-                    <a href="#">Forgot Password?</a>
-                </div>
-                
-            </div>
+    <!-- Help & Support Modal -->
+    <div class="modal" id="helpModal">
+        <div class="modal-content">
+            <h2>Help & Support</h2>
+            <p>If you need assistance, feel free to reach out:</p>
+            <p><strong>Email:</strong> support@techsolutions.com</p>
+            <p><strong>Phone:</strong> +1-800-123-4567</p>
+            <span class="close" onclick="closeHelpModal()">Close</span>
         </div>
     </div>
 
-    
+    <script>
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+
+        function openHelpModal() {
+            document.getElementById("helpModal").style.display = "flex";
+        }
+
+        function closeHelpModal() {
+            document.getElementById("helpModal").style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            let modal = document.getElementById("helpModal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>

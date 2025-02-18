@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Tech Solutions</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #AFDDE5;
+            color: #333;
+        }
+
+        /* Page Content Styles */
+        .faq {
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #003135;
+            color: white;
+            padding: 15px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        header .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        header .title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Navigation */
+        .menu-toggle {
+            font-size: 24px;
+            cursor: pointer;
+            display: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+         
+        /* Mobile Navigation */
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            background-color: #003135;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 50%;
+            right: 0;
+            padding: 10px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-nav a {
+            padding: 10px;
+            text-align: left;
+            border-top: 1px solid black;
+            color: white;
+             text-decoration: none;
+        }
+
+        .mobile-nav.active {
+            display: flex;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #003135;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            /* Show menu toggle button */
+            .menu-toggle {
+                display: block;
+            }
+
+            /* Hide desktop nav */
+            nav {
+                display: none;
+            }
+
+            /* Adjust header */
+            header {
+                padding: 10px 15px;
+            }
+
+            header .logo {
+                width: 50px;
+                height: 50px;
+            }
+
+            header .title {
+                font-size: 18px;
+            }
+
+            /* Mobile navigation */
+            .mobile-nav {
+                display: none;
+            }
+
+            .mobile-nav.active {
+                display: flex;
+            }
+
+            .faq {
+                width: 90%;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            footer {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img class="logo" src="https://assets.onecompiler.app/42y68y97m/4368p53jg/WhatsApp%20Image%202024-12-14%20at%208.40.55%20PM.jpeg" alt="Company Logo">
+        <div class="title">Tech Solutions</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="#services">Services</a>
+            <a href="#">Contact Us</a>
+            <a href="home.html #privacy">Essentials</a>
+        </nav>
+    </header>
+
+    <div class="mobile-nav">
+        <a href="home.html">Home</a>
+        <a href="#services">Services</a>
+        <a href="#">Contact Us</a>
+        <a href="home.html #privacy">Essentials</a>
+    </div>
+
+    <div class="faq">
+        <h1>Frequently Asked Questions</h1>
+
+        <h2>1. What services do you offer?</h2>
+        <p>We provide technology solutions including software development, IT consulting, and cybersecurity services.</p>
+
+        <h2>2. How can I contact support?</h2>
+        <p>You can reach us via email at <a href="mailto:techsolutions0078@gmail.com">techsolutions0078@gmail.com</a>.</p>
+
+        <h2>3. Do you offer refunds?</h2>
+        <p>Our refund policy depends on the service. Please check our <a href="t&c.html">Terms and Conditions</a> for details.</p>
+
+        <h2>4. How do I protect my data with your services?</h2>
+        <p>We follow strict security measures to ensure your data is safe. Read our <a href="pp.html">Privacy Policy</a> for more.</p>
+        
+        <h2>5. Do you provide customer support 24/7?</h2>
+        <p>Our support team is available from Monday to Friday, 9 AM to 6 PM. For urgent issues, you can email us anytime, and we'll get back to you as soon as possible.</p>
+        
+        <h2>6. Can I request a custom software solution?</h2>
+        <p>Yes, we offer custom software development tailored to your business needs. Contact us to discuss your requirements.</p>
+        
+        <h2>7. What industries do you specialize in?</h2>
+        <p>We provide tech solutions for various industries, including healthcare, finance, e-commerce, and education.</p>
+        
+        <h2>8. Do you offer website development?</h2>
+        <p>Yes, we create responsive and user-friendly websites for businesses of all sizes.</p>
+        
+        <h2>9. How do I get a price quote?</h2>
+        <p>You can request a free quote by contacting us via email or filling out the form on our website.</p>
+        
+    </div>
+
+    <footer>
+        &copy; 2024 Tech Solutions. All Rights Reserved.
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.mobile-nav').classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>

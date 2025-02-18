@@ -11,7 +11,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #AFDDE5;
         }
 
 
@@ -19,20 +19,20 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background-color: #97CADB;
+            background-color: #003135;
             color: white;
             padding: 20px 30px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         header .logo {
-            width: 50px;
-            height: 50px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
         }
 
         header .title {
-            font-size: 18px;
+            font-size: 23px;
             font-weight: bold;
         }
 
@@ -62,7 +62,7 @@
         .mobile-nav {
             display: none;
             flex-direction: column;
-            background-color: #007bff;
+            background-color: #003135;
             position: absolute;
             top: 60px;
             left: 0;
@@ -85,7 +85,7 @@
         }
 
         footer {
-            background-color: #97CADB;
+            background-color: #003135;
             color: white;
             text-align: center;
             padding: 30px;
@@ -99,12 +99,35 @@ section {
     width: auto;
     text-align: center; /* Center text inside sections */
 }
- h2 {
+ 
+      img {
+            width: 400px;
+             height: auto;
+            margin-bottom: 20px;
+            
+     }
+     h2 {
     color: #001B48; /* Color for h2 */
     text-align: center;
     margin-bottom: 30px; /* Adds space below the heading */
       }
-
+     .home h2 {
+            color: #001B48;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .home p {
+            font-size: 18px;
+            color: #000;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            margin-left: 28%;
+            max-width: 800px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
      h3 {
     color: #000000; /* Color for h3 */
     text-align: center;
@@ -123,7 +146,7 @@ section {
     margin: 0 auto; /* Center container */
 }
 .card {
-    background-color: #97CADB ;
+    background-color: #0FA4AF ;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -174,7 +197,7 @@ section {
     color: #001B48;
 }
 button {
-    background-color: #018ABE;
+    background-color: #003135;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -185,7 +208,7 @@ button {
 }
 
 button:hover {
-    background-color:    #b3e4f6;
+    background-color:    #015158;
 }
  /* Media Query for Mobile View */
         @media (max-width: 768px) {
@@ -232,7 +255,7 @@ button:hover {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background-color: #97CADB;
+            background-color: #003135;
             color: white;
             width: auto;
             padding: 10px 20px;
@@ -262,7 +285,7 @@ button:hover {
         .mobile-nav {
             display: none;
             flex-direction: column;
-            background-color: #97CADB;
+            background-color: #003135;
             position: absolute;
             top: 60px;
             left: 0;
@@ -275,7 +298,7 @@ button:hover {
         .mobile-nav a {
             padding: 10px;
             text-align: left;
-            border-top: 1px solid #ddd;
+            border-top: 1px solid black;
             color: white;
              text-decoration: none;
         }
@@ -285,7 +308,7 @@ button:hover {
         }
 
         footer {
-            background-color: #97CADB;
+            background-color: #003135;
             color: white;
             text-align: center;
             padding: 20px;
@@ -299,19 +322,25 @@ button:hover {
     width: auto;
     text-align: center; /* Center text inside sections */
 }
- h2 {
+h2 {
     color: #001B48; /* Color for h2 */
     text-align: center;
     font-size: 18px;
     margin-bottom: 30px; /* Adds space below the heading */
       }
-
-     h3 {
-    color: #000000; /* Color for h3 */
-    text-align: center;
-    
-    margin-bottom: 15px; /* Adds space below the heading */
-       } 
+      img {
+            width: 300px;
+             height: auto;
+            margin-bottom: 10px;
+            
+     }
+     .home p {
+                font-size: 16px;
+                padding: 0 10px;
+                margin-right: 5%;
+                margin-left: 5%;
+            }
+   
 
 .card-container {
     display: grid;
@@ -325,7 +354,7 @@ button:hover {
     margin: 0 auto; /* Center container */
 }
 .card {
-    background-color: #97CADB ;
+    background-color: #0FA4AF ;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -346,14 +375,12 @@ button:hover {
 h3 {
     font-size: 14px;
     margin: 10px 0;
-    color: #333333;
+    color: #000;
 }
-
 p {
-    font-size: 10px;
-    color: #000000;
-    margin: 10px 0 20px;
+    font-size: 12px;
 }
+ 
 .info-section {
     display: flex;
     justify-content: center; /* Center the items horizontally */
@@ -386,7 +413,7 @@ p {
     margin-bottom: 2px; /* Reduce space below the icon */
 }
 button {
-    background-color: #018ABE;
+    background-color: #003135;
     color: white;
     border: none;
     padding: 4px 8px;
@@ -415,7 +442,7 @@ button {
             <a href="home.html">Home</a>
             <a href="#services">Services</a>
             <a href="#">Contact Us</a>
-            <a href="#">About Us</a>
+            <a href="#privacy">Essentials</a>
         </nav>
     </header>
 
@@ -424,20 +451,13 @@ button {
         <a href="home.html">Home</a>
         <a href="#services">Services</a>
         <a href="#">Contact Us</a>
-        <a href="#">About Us</a>
+        <a href="#privacy">Essentials</a>
     </div>
 
-    <section id="home">
-        <h2> WELCOME TO TECH SOLUTIONS </h2>
-          <p > Tech solutions are tools and services that help businesses improve efficiency and productivity. </p>
-         <p> Software solutions like ERP systems (e.g., SAP, Oracle) integrate business functions such as finance and HR, </p>
-         <p>  while CRM tools (e.g., Salesforce) manage customer interactions and boost sales. Cloud solutions, such as AWS  </p>
-        <p>   and Google Drive, offer scalable storage and remote access to data. Automation tools like RPA and AI streamline</p>
-         <p>  repetitive tasks and enhance decision-making. Cybersecurity solutions, including firewalls and encryption,</p>
-          <p>  protect sensitive data, and IT support ensures smooth technology operations. These tech solutions help</p>
-          <p> businesses reduce costs and stay competitive.</p>
-          
-              
+    <section id="home" class="home">
+        <h2>WELCOME TO TECH SOLUTIONS</h2>
+        <img src="https://assets.onecompiler.app/42y68y97m/439fhr2h5/Adobe%20Express%20-%20file%20(1).png" alt="Tech Solutions Image">
+        <p>Tech solutions are tools and services that help businesses improve efficiency and productivity. They include ERP systems (e.g., SAP, Oracle), CRM tools (e.g., Salesforce), cloud solutions like AWS and Google Drive, automation tools like RPA and AI, and cybersecurity measures such as firewalls and encryption. These technologies help businesses reduce costs and stay competitive.</p>
     </section>
 
     <section id="services">
@@ -479,26 +499,26 @@ button {
     </div>
     </section>
 
-    <h2>Support Information</h2>
+    <h2>Essentials</h2>
 <div class="info-section">
     <div id="privacy">
         <i class="fas fa-user-shield"></i> <!-- Privacy Policy Icon -->
         <p>Privacy Policy</p>
-         <a href="applyl.html" >
+         <a href="pp.html" >
                 <button>⋙</button>
             </a>
     </div>
     <div id="faq">
         <i class="fas fa-question-circle"></i> <!-- FAQ Icon -->
         <p>FAQ</p>
-        <a href="applyl.html" >
+        <a href="faq.html" >
                 <button>⋙</button>
             </a>
     </div>
     <div id="terms">
         <i class="fas fa-file-contract"></i> <!-- Terms and Conditions Icon -->
         <p>Terms and Conditions</p>
-        <a href="applyl.html" >
+        <a href="t&c.html" >
                 <button>⋙</button>
             </a>
     </div>

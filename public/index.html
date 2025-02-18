@@ -13,7 +13,7 @@
         body {
             font-family: 'Roboto', sans-serif;
             text-align: center;
-            background:  #fff;
+            background:  #AFDDE5;
             color: #000;
             min-height: 100vh;
             display: flex;
@@ -21,7 +21,7 @@
             align-items: center;
         }
         .header {
-            background: #97CADB;
+            background: #003135;
             width: 100%;
             padding: 30px;
             font-size: 32px;
@@ -29,7 +29,7 @@
             color: white;
             text-transform: uppercase;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-            border-bottom: 4px solid #97CADB;
+            border-bottom: 4px solid #003135;
             text-align: center;
             animation: slideIn 1s ease-out;
         }
@@ -53,6 +53,13 @@
             max-width: 600px;
             padding: 20px;
         }
+        img {
+            width: 100%;
+            
+            height: auto;
+            margin-bottom: 20px;
+            
+        }
         .buttons {
             display: flex;
             flex-direction: column;
@@ -69,19 +76,19 @@
             cursor: pointer;
             border: none;
             border-radius: 50px;
-            background: #97CADB;
+            background: #003135;
             color: white;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease-in-out;
         }
         .buttons button:hover {
             transform: scale(1.05);
-            background: #82c3d9;
+            background: #015158;
         }
         .help-support {
             font-size: 18px;
             margin-top: 20px;
-            color: #000000;
+             color: #000000;
             cursor: pointer;
             text-decoration: underline;
             transition: color 0.3s ease;
@@ -102,8 +109,8 @@
             align-items: center;
         }
         .modal-content {
-            background-color: #fff;
-            color: #333;
+            background-color: #015158;
+            color: #ffffff;
             padding: 20px;
             border-radius: 10px;
             width: 90%;
@@ -111,18 +118,32 @@
             text-align: center;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
         }
+        .contact-info a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: normal;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
         .close {
             font-size: 18px;
             font-weight: bold;
-            color: #333;
+            color: #ffffff;
             cursor: pointer;
             display: block;
             margin-top: 15px;
         }
         .close:hover {
-            color: red;
+            color: #09b3c3;
         }
         @media (min-width: 768px) {
+            img {
+                width: 70%;
+            }
             .buttons {
                 flex-direction: row;
                 justify-content: center;
@@ -138,6 +159,8 @@
 <body>
     <div class="header">Tech Solutions</div>
     <div class="container">
+         <!-- Added Image Before Login Buttons -->
+         <img src="https://assets.onecompiler.app/42y68y97m/439fhr2h5/Adobe%20Express%20-%20file%20(2).png" alt="Welcome Image">
         <div class="buttons">
             <button onclick="navigateTo('adminlogin.html')">Admin Login</button>
             <button onclick="navigateTo('userlogin.html')">User Login</button>
@@ -150,8 +173,12 @@
         <div class="modal-content">
             <h2>Help & Support</h2>
             <p>If you need assistance, feel free to reach out:</p>
-            <p><strong>Email:</strong> support@techsolutions.com</p>
-            <p><strong>Phone:</strong> +1-800-123-4567</p>
+            <div class="contact-info">
+                <p><strong>Email:</strong> <a href="mailto:techsolutions0078@gmail.com">techsolutions0078@gmail.com</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+919440994060">+91 94409 94060</a></p>
+              </div>
+              
+            
             <span class="close" onclick="closeHelpModal()">Close</span>
         </div>
     </div>
